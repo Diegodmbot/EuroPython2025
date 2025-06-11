@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ghyrp3xwg2rj"]
+
+[ext_resource type="Script" uid="uid://c2fekdo2vro5n" path="res://camera.gd" id="2_h8t3n"]
+
+[node name="server" type="Node"]
+
+[node name="Camera" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+script = ExtResource("2_h8t3n")

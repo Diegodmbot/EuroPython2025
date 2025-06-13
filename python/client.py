@@ -23,7 +23,7 @@ while True:
     success, encoded_frame = cv2.imencode(".jpg", frame)
 
     if success and len(encoded_frame) <= 65507 - 4:
-        data = b"IMG" + encoded_frame.tobytes()  # prefijo 'IMG'
+        data = b"IMG" + encoded_frame.tobytes()
     else:
         data = b"TXT" + b"Frame too large, skipping"
 

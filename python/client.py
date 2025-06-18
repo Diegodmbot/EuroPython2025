@@ -7,10 +7,7 @@ server_port = 4242
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 cap = cv2.VideoCapture(0)
 
-while True:
-    if cv2.waitKey(1) & 0xFF == ord("q"):
-        break
-    
+while True:    
     ret, frame = cap.read()
 
     if not ret:

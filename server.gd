@@ -16,7 +16,7 @@ func _process(delta):
 
 func start_python_script():
 	python_process = OS.execute_with_pipe(interpreter_path, [script_path])
-	print(python_process["pid"])
+	print("PID: ", python_process["pid"])
 
 func stop_python_script():
 	OS.kill(python_process["pid"])

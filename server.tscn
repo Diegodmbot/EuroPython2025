@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ghyrp3xwg2rj"]
+[gd_scene load_steps=3 format=3 uid="uid://ghyrp3xwg2rj"]
 
 [ext_resource type="Script" uid="uid://c2fekdo2vro5n" path="res://camera.gd" id="2_h8t3n"]
+[ext_resource type="Texture2D" uid="uid://dcrsqhakhktgc" path="res://icon.svg" id="2_imety"]
 
 [node name="server" type="Node"]
 
@@ -12,3 +13,10 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch_mode = 5
 script = ExtResource("2_h8t3n")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+offset_left = 164.0
+offset_top = 265.0
+offset_right = 417.0
+offset_bottom = 531.0
+texture = ExtResource("2_imety")

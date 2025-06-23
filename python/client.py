@@ -41,11 +41,11 @@ while True:
         print("Error: failed to capture image")
         break
 
+    frame = cv2.flip(frame, 1)
+    frame = cv2.resize(frame, (400, 300))
     grayImg = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = faceCascade.detectMultiScale(
         grayImg, scaleFactor=1.1, minNeighbors=5)
-    frame = cv2.resize(frame, (400, 300))
-    frame = cv2.flip(frame, 1)
     if send_image_next:
         send_image(frame)
     elif len(faces) > 0:

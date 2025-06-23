@@ -1,6 +1,8 @@
 extends TextureRect
 
 var server: UDPServer
+@onready var face_mask = %FaceMask
+@onready var face_mask_2 = $FaceMask2
 
 func _ready():
 	server = UDPServer.new()
@@ -30,8 +32,9 @@ func _process(delta):
 				var y = float(payload.get_string_from_utf8().get_slice(",", 1))
 				var w = float(payload.get_string_from_utf8().get_slice(",", 2))
 				var h = float(payload.get_string_from_utf8().get_slice(",", 3))
-				print("Recibido RECT: %f %f %f %f" % [x, y, w, h])
-				print("----")
+				face_mask.position = Vector2(x, y)
+				face_mask.size = Vector2(x+w,y+h)
+				face_mask_2.position = Vector2(x+w,y+h)
 			_:
 				print("Tipo desconocido:", header)
 

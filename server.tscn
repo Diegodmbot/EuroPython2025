@@ -5,18 +5,52 @@
 
 [node name="server" type="Node"]
 
-[node name="Camera" type="TextureRect" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stretch_mode = 5
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Camera" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 0
+stretch_mode = 3
 script = ExtResource("2_h8t3n")
 
-[node name="ColorRect" type="TextureRect" parent="."]
-offset_left = 164.0
-offset_top = 265.0
-offset_right = 417.0
-offset_bottom = 531.0
+[node name="FaceMask" type="TextureRect" parent="Control/Camera"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -272.0
+offset_bottom = -172.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_imety")
+
+[node name="FaceMask2" type="TextureRect" parent="Control/Camera"]
+modulate = Color(1, 0.104859, 0.197094, 1)
+offset_right = 128.0
+offset_bottom = 128.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_imety")
+
+[node name="FaceMask3" type="TextureRect" parent="Control/Camera"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -172.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_imety")

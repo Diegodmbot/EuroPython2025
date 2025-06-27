@@ -27,7 +27,6 @@ while True:
         cv2.putText(frame, "No Face Detected", (10, 30),
                     cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
     frame = cv2.resize(frame, (400, 300))
-    # frame = cv2.flip(frame, 1)
 
     cv2.imshow("Camera Feed", frame)
 

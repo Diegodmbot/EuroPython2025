@@ -1,11 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://ghyrp3xwg2rj"]
 
-[ext_resource type="Script" uid="uid://c2fekdo2vro5n" path="res://camera.gd" id="2_h8t3n"]
-[ext_resource type="Texture2D" uid="uid://dcrsqhakhktgc" path="res://icon.svg" id="2_imety"]
+[ext_resource type="Script" uid="uid://c2fekdo2vro5n" path="res://face_display.gd" id="1_dc7c4"]
+[ext_resource type="Texture2D" uid="uid://dcrsqhakhktgc" path="res://icon.svg" id="1_jt5fu"]
 
-[node name="server" type="Node"]
-
-[node name="Control" type="Control" parent="."]
+[node name="FaceDisplay" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,14 +12,14 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_dc7c4")
 
-[node name="Camera" type="TextureRect" parent="Control"]
+[node name="Camera" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(400, 300)
 layout_mode = 0
 stretch_mode = 3
-script = ExtResource("2_h8t3n")
 
-[node name="FaceMask" type="TextureRect" parent="Control/Camera"]
+[node name="FaceMask" type="TextureRect" parent="Camera"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -32,4 +30,4 @@ offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_imety")
+texture = ExtResource("1_jt5fu")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://3swsd2yhwfy"]
+
+[ext_resource type="Script" uid="uid://dd7qa3scwhka5" path="res://udp_server.gd" id="1_18v5u"]
+
+[node name="UdpServer" type="Node"]
+script = ExtResource("1_18v5u")

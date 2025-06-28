@@ -1,8 +1,8 @@
-extends TextureRect
+extends Control
 
 var server: UDPServer
+@onready var camera = $Camera
 @onready var face_mask = %FaceMask
-@onready var face_mask_2 = $FaceMask2
 
 func _ready():
 	server = UDPServer.new()
@@ -23,18 +23,18 @@ func _process(delta):
 			"IMG":
 				var image = _decode_image(payload)
 				if image:
-					texture = ImageTexture.create_from_image(image)
+					camera.texture = ImageTexture.create_from_image(image)
+			"REC":
+				var coords = payload.get_string_from_utf8().split(",")
+				var x = float(coords[0])
+				var y = float(coords[1])
+				var w = float(coords[2])
+				var h = float(coords[3])
+				face_mask.position = Vector2(x, y)
+				face_mask.size = Vector2(x+w,y+h)
 			"TXT":
 				var message = payload.get_string_from_utf8()
 				print("Mensaje recibido:", message)
-			"REC":
-				var x = float(payload.get_string_from_utf8().get_slice(",", 0))
-				var y = float(payload.get_string_from_utf8().get_slice(",", 1))
-				var w = float(payload.get_string_from_utf8().get_slice(",", 2))
-				var h = float(payload.get_string_from_utf8().get_slice(",", 3))
-				face_mask.position = Vector2(x, y)
-				face_mask.size = Vector2(x+w,y+h)
-				face_mask_2.position = Vector2(x+w,y+h)
 			_:
 				print("Tipo desconocido:", header)
 

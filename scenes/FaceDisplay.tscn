@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ghyrp3xwg2rj"]
 
-[ext_resource type="Script" uid="uid://c2fekdo2vro5n" path="res://face_display.gd" id="1_dc7c4"]
+[ext_resource type="Script" uid="uid://c2fekdo2vro5n" path="res://scenes/face_display.gd" id="1_dc7c4"]
 [ext_resource type="Texture2D" uid="uid://dcrsqhakhktgc" path="res://icon.svg" id="1_jt5fu"]
 
 [node name="FaceDisplay" type="Control"]
